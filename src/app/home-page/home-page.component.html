@@ -1,0 +1,131 @@
+<div class="banner-container">
+	<div class="banner-slider swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img class="item-img imgCover" src="./assets/images/Bitmap.jpg">
+					<div class="info-wrapper">
+						<div class="container">
+							<div class="title">Wrath of the titans 1</div>
+							<div class="media-type">
+								<span>Fantasy</span>
+								<span>Animation</span>
+								<span>Family</span>
+								<span>|</span>
+								<span>Duration: 1h 52m</span>
+							</div>
+							<div class="action-list">
+								<button class="primary-button">Watch movie</button>
+								<button class="primary-button trans-btn">View info</button>
+								<span class="add-wlist">+ Add to wishlist</span>
+							</div>
+							<div class="rating">
+								<span class="text"><span class="hl-word">Rating</span> based on 3.456 reviews</span>
+								<div class="star-list">
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star half"></span>
+									<span class="star"></span>
+									<span class="rated">3.4</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<img class="item-img imgCover" src="./assets/images/Bitmap.jpg">
+					<div class="info-wrapper">
+						<div class="container">
+							<div class="title">Wrath of the titans 2</div>
+							<div class="media-type">
+								<span>Fantasy</span>
+								<span>Animation</span>
+								<span>Family</span>
+								<span>|</span>
+								<span>Duration: 2h 12m</span>
+							</div>
+							<div class="action-list">
+								<button class="primary-button">Watch movie</button>
+								<button class="primary-button trans-btn">View info</button>
+								<span class="add-wlist">+ Add to wishlist</span>
+							</div>
+							<div class="rating">
+								<span class="text"><span class="hl-word">Rating</span> based on 4.456 reviews</span>
+								<div class="star-list">
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star half"></span>
+									<span class="rated">4.5</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<img class="item-img imgCover" src="./assets/images/Bitmap.jpg">
+					<div class="info-wrapper">
+						<div class="container">
+							<div class="title">Wrath of the titans 3</div>
+							<div class="media-type">
+								<span>Fantasy</span>
+								<span>Animation</span>
+								<span>Family</span>
+								<span>|</span>
+								<span>Duration: 1h 58m</span>
+							</div>
+							<div class="action-list">
+								<button class="primary-button">Watch movie</button>
+								<button class="primary-button trans-btn">View info</button>
+								<span class="add-wlist">+ Add to wishlist</span>
+							</div>
+							<div class="rating">
+								<span class="text"><span class="hl-word">Rating</span> based on 5.021 reviews</span>
+								<div class="star-list">
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="star full"></span>
+									<span class="rated">5.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+</div>
+
+<div class="filter-container">
+	<div class="container">
+		<ul class="filter-wrapper row">
+			<li *ngFor="let item of filters; let i = index" (click)="selectFilter(i)" class="item" [class.selected]="item === selectedItem">{{item}}</li>
+		</ul>
+	</div>
+</div>
+
+<div class="home-grid-container">
+	<div class="container">
+		<div class="row row-grid-15">
+			<div class="grid-item" *ngFor="let item of data; let i = index">
+				<div class="item-wrapper ui-card">
+					<a href="#" title="{{item.title}}">
+						<div class="img-wrapper">
+							<img class="imgCover" src="https://image.tmdb.org/t/p/w300/{{item.poster_path}}" alt="{{item.title}}">
+							<span class="year">{{item.release_date | slice:0:4}}</span>
+						</div>
+					</a>
+					<div class="info-wrapper">
+						<a href="#" title="{{item.title}}"><h3 class="title">{{item.title}}</h3></a>
+						<span class="type">{{item.media_type}}</span>
+						<span class="rated">{{item.vote_average}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
